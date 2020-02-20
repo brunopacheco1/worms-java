@@ -1,6 +1,0 @@
-META-INF/services/io.micronaut.inject.BeanDefinitionReference
-com/github/brunopacheco1/worms/controllers/$HelloControllerDefinition$$exec1.class
-com/github/brunopacheco1/Application.class
-com/github/brunopacheco1/worms/controllers/$HelloControllerDefinition.class
-com/github/brunopacheco1/worms/controllers/$HelloControllerDefinitionClass.class
-META-INF/swagger/worms-0.0.yml

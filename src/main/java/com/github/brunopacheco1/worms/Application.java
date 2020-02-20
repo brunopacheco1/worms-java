@@ -1,4 +1,4 @@
-package com.github.brunopacheco1;
+package com.github.brunopacheco1.worms;
 
 import io.micronaut.runtime.Micronaut;
 import io.swagger.v3.oas.annotations.*;

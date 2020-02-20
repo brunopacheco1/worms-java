@@ -1,0 +1,19 @@
+---
+micronaut:
+  application:
+    name: worms
+
+---
+#rabbitmq:
+#  uri: amqp://localhost:5672
+
+---
+postgres:
+  reactive:
+    client:
+      port: 5432
+      host: localhost
+      database: worms
+#      user: user
+#      password: password
+#      maxSize: 5

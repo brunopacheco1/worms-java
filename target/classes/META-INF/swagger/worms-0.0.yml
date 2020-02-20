@@ -1,0 +1,16 @@
+openapi: 3.0.1
+info:
+  title: worms
+  version: "0.0"
+paths:
+  /hello:
+    get:
+      operationId: getHelloWorld
+      parameters: []
+      responses:
+        default:
+          description: getHelloWorld default response
+          content:
+            application/json:
+              schema:
+                type: string

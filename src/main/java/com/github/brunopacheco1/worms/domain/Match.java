@@ -1,12 +1,12 @@
 package com.github.brunopacheco1.worms.domain;
 
 import java.util.Set;
-
+import lombok.Builder;
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Data
+@Builder
 @Entity(name = "MATCH")
 public class Match {
 
@@ -37,6 +37,7 @@ public class Match {
   @Column(name = "map_size")
   private int mapSize;
 
+  @Builder.Default
   @Column(name = "status")
   @Enumerated(EnumType.STRING)
   private MatchStatus status = MatchStatus.WAITING_PLAYERS;

@@ -1,9 +1,11 @@
 package com.github.brunopacheco1.worms.domain;
 
-import javax.persistence.*;
+import lombok.Builder;
 import lombok.Data;
+import javax.persistence.*;
 
 @Data
+@Builder
 @Entity(name = "MATCH_PLAYER")
 public class MatchPlayer {
  
@@ -20,10 +22,12 @@ public class MatchPlayer {
   @ManyToOne
   private Match match;
 
+  @Builder.Default
   @Column(name = "worm_length")
   private int wormLength = 2;
 
   @Column(name = "status")
+  @Builder.Default
   @Enumerated(EnumType.STRING)
   private PlayerStatus status = PlayerStatus.PLAYING;
 }

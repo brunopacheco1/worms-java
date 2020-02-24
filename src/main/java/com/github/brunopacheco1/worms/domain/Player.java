@@ -1,11 +1,12 @@
 package com.github.brunopacheco1.worms.domain;
 
 import java.util.Set;
-
+import lombok.Builder;
 import lombok.Data;
 import javax.persistence.*;
 
 @Data
+@Builder
 @Entity(name = "PLAYER")
 public class Player {
   

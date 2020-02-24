@@ -6,7 +6,7 @@ import com.github.brunopacheco1.worms.domain.Direction;
 import com.github.brunopacheco1.worms.domain.PlayerStatus;
 
 @Data
-  public class MapPlayerInfo {
+public class MapPlayerInfo {
   private Long id;
   private PlayerStatus status;
   private int wormLength;

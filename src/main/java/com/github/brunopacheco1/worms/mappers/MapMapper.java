@@ -1,6 +1,6 @@
 package com.github.brunopacheco1.worms.mappers;
 
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toList;
 
 import com.github.brunopacheco1.worms.domain.Match;
 import com.github.brunopacheco1.worms.domain.MatchPlayer;
@@ -18,11 +18,11 @@ public class MapMapper {
       .difficulty(match.getDifficulty())
       .playMode(match.getPlayMode())
       .mapSize(match.getMapSize())
-      .players(match.getPlayers().stream().map(MapMapper::from).collect(Collectors.toList()))
+      .players(match.getPlayers().stream().map(MapMapper::from).collect(toList()))
       .build();
   }
 
-  public static MapPlayerInfo from(MatchPlayer matchPlayer) {
+  private static MapPlayerInfo from(MatchPlayer matchPlayer) {
     Player player = matchPlayer.getPlayer();
     return MapPlayerInfo.builder()
       .id(player.getId())

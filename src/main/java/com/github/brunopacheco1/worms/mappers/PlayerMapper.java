@@ -13,15 +13,15 @@ public class PlayerMapper {
       .build();
   }
 
-  public static PlayerInfo to(Player player) {
+  public static PlayerInfo from(Player player) {
     return PlayerInfo.builder()
       .id(player.getId())
       .nickname(player.getNickname())
       .build();
   }
 
-  public static PlayerInfo to(MatchPlayer player) {
-    return to(player.getPlayer());
+  public static PlayerInfo from(MatchPlayer player) {
+    return from(player.getPlayer());
   }
 }
 

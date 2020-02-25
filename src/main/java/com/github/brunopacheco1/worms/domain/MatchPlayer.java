@@ -31,3 +31,4 @@ public class MatchPlayer {
   @Enumerated(EnumType.STRING)
   private PlayerStatus status = PlayerStatus.PLAYING;
 }
+

@@ -12,8 +12,9 @@ public class GhostOpponentEvaluator extends Evaluator {
     currentMap.getPlayers().stream()
       .filter(p -> p.getStatus() == PlayerStatus.PLAYING)
       .forEach(player -> {
-        var lastPoint = player.getPosition().get(player.getPosition().size() - 1);
-        var allOtherPoints = player.getPosition().subList(0, player.getPosition().size() - 1);
+        var lastIndex = player.getPosition().size() - 1;
+        var lastPoint = player.getPosition().get(lastIndex);
+        var allOtherPoints = player.getPosition().subList(0, lastIndex);
         if (allOtherPoints.contains(lastPoint)) {
           player.setStatus(PlayerStatus.DEAD);
         }

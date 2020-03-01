@@ -9,8 +9,7 @@ public class GhostOpponentEvaluator extends Evaluator {
 
   @Override
   void doEvaluation(MapInfo lastMap, MapInfo currentMap) {
-    currentMap.getPlayers().stream()
-      .filter(p -> p.getStatus() == PlayerStatus.PLAYING)
+    currentMap.getStillPlayingPlayers()
       .forEach(player -> {
         var lastIndex = player.getPosition().size() - 1;
         var lastPoint = player.getPosition().get(lastIndex);

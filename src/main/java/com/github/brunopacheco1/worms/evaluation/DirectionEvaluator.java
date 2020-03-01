@@ -7,8 +7,7 @@ public class DirectionEvaluator extends Evaluator {
 
   @Override
   void doEvaluation(MapInfo lastMap, MapInfo currentMap) {
-    currentMap.getPlayers().stream()
-      .filter(p -> p.getStatus() == PlayerStatus.PLAYING)
+    currentMap.getStillPlayingPlayers()
       .forEach(player -> {
         var newDirection = getNewDirection(player);
         if(!newDirection.isOpposite(player.getDirection())) {

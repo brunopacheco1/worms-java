@@ -10,8 +10,7 @@ public class MirrorWallEvaluator extends Evaluator {
 
   @Override
   void doEvaluation(MapInfo lastMap, MapInfo currentMap) {
-    currentMap.getPlayers().stream()
-      .filter(p -> p.getStatus() == PlayerStatus.PLAYING)
+    currentMap.getStillPlayingPlayers()
       .forEach(player -> {
         var mapSize = currentMap.getMapSize();
         var lastIndex = player.getPosition().size() - 1;

@@ -9,15 +9,14 @@ public class GhostOpponentEvaluator extends Evaluator {
 
   @Override
   void doEvaluation(MapInfo lastMap, MapInfo currentMap) {
-    currentMap.getStillPlayingPlayers()
-      .forEach(player -> {
-        var lastIndex = player.getPosition().size() - 1;
-        var lastPoint = player.getPosition().get(lastIndex);
-        var allOtherPoints = player.getPosition().subList(0, lastIndex);
-        if (allOtherPoints.contains(lastPoint)) {
-          player.setStatus(PlayerStatus.DEAD);
-        }
-      });
+    currentMap.getStillPlaying().forEach(player -> {
+      var lastIndex = player.getPosition().size() - 1;
+      var lastPoint = player.getPosition().get(lastIndex);
+      var allOtherPoints = player.getPosition().subList(0, lastIndex);
+      if (allOtherPoints.contains(lastPoint)) {
+        player.setStatus(PlayerStatus.DEAD);
+      }
+    });
   }
 }
 

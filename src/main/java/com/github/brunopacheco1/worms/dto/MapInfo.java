@@ -25,7 +25,7 @@ public class MapInfo {
   private Point foodPosition;
 
   @JsonIgnore
-  public Stream<MapPlayerInfo> getStillPlayingPlayers() {
+  public Stream<MapPlayerInfo> getStillPlaying() {
     return players.stream().filter(p -> p.getStatus().equals(PlayerStatus.PLAYING));
   }
 }

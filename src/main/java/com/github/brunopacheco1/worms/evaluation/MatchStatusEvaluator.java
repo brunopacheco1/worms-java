@@ -7,7 +7,7 @@ public class MatchStatusEvaluator extends Evaluator {
 
   @Override
   void doEvaluation(MapInfo lastMap, MapInfo currentMap) {
-    if (currentMap.getStillPlayingPlayers().count() == 0) {
+    if (currentMap.getStillPlaying().count() == 0) {
       currentMap.setStatus(MatchStatus.FINISHED);
     }
   }

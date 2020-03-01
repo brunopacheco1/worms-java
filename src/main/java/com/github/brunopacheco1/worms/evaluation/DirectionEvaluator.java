@@ -7,13 +7,12 @@ public class DirectionEvaluator extends Evaluator {
 
   @Override
   void doEvaluation(MapInfo lastMap, MapInfo currentMap) {
-    currentMap.getStillPlayingPlayers()
-      .forEach(player -> {
-        var newDirection = getNewDirection(player);
-        if(!newDirection.isOpposite(player.getDirection())) {
-          player.setDirection(newDirection);
-        }
-      });
+    currentMap.getStillPlaying().forEach(player -> {
+      var newDirection = getNewDirection(player);
+      if(!newDirection.isOpposite(player.getDirection())) {
+        player.setDirection(newDirection);
+      }
+    });
   }
 
   private Direction getNewDirection(MapPlayerInfo player) {

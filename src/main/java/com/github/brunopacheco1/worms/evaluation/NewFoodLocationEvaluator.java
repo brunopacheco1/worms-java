@@ -12,9 +12,7 @@ public class NewFoodLocationEvaluator extends Evaluator {
 
   @Override
   void doEvaluation(MapInfo lastMap, MapInfo currentMap) {
-    var stillPlaying = currentMap.getStillPlayingPlayers();
-    var playersLastPointIsEqualFoodPoint = stillPlaying
-      .map(MapPlayerInfo::getPosition)
+    var playersLastPointIsEqualFoodPoint = currentMap.getStillPlaying()
       .map(this::lastPoint)
       .anyMatch(p -> p.equals(currentMap.getFoodPosition()));
 
@@ -23,13 +21,14 @@ public class NewFoodLocationEvaluator extends Evaluator {
     }
   }
 
-  private Point lastPoint(List<Point> points) {
+  private Point lastPoint(MapPlayerInfo player) {
+    var points = player.getPosition();
     return points.get(points.size() - 1);
   }
   
   private void defineNewFoodPosition(MapInfo currentMap) {
     var lastMapIndex = currentMap.getMapSize() - 1;
-    var allOccupiedPoints = currentMap.getStillPlayingPlayers().flatMap(p -> p.getPosition().stream()).collect(toSet());
+    var allOccupiedPoints = currentMap.getStillPlaying().flatMap(p -> p.getPosition().stream()).collect(toSet());
     var random = new Random();
     Point newFood;
     while (true) {
